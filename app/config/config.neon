@@ -13,3 +13,38 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	cssMin: Joseki\Webloader\CssMinFilter
+	jsMin: Joseki\Webloader\JsMinFilter
+	wlCssFilter: WebLoader\Filter\CssUrlsFilter(%wwwDir%)
+	lessFilter: WebLoader\Filter\LessFilter
+	jwlCssMinFilter: Joseki\Webloader\CssMinFilter
+
+extensions:
+	webloader: WebLoader\Nette\Extension
+
+webloader:
+	css:
+		default:
+			filters:
+				- @jwlCssMinFilter
+			fileFilters:
+#				- @lessFilter
+				- @wlCssFilter
+			watchFiles:		# only watch modify file
+				- {files: ["*.css", "*.less"], from: css}
+				- {files: ["*.css", "*.less"], in: css}
+			files:
+			    - style.less
+			remoteFiles:
+			    - https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css
+
+	js:
+		default:
+			remoteFiles:
+				- https://code.jquery.com/jquery-3.3.1.min.js
+				- http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js
+				- https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
+				- https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+				- https://cdn.jsdelivr.net/npm/vue/dist/vue.js
+			files:
+				- vue.js
