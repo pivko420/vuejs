@@ -34,9 +34,10 @@ webloader:
 				- {files: ["*.css", "*.less"], from: css}
 				- {files: ["*.css", "*.less"], in: css}
 			files:
-			    - style.less
+			    - style.css
 			remoteFiles:
 			    - https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css
+			    - https://use.fontawesome.com/releases/v5.7.2/css/all.css
 
 	js:
 		default:

@@ -1,4 +1,59 @@
+@green: #55da2b;
+@purple: #ad5aff;
+
 html {
   overflow-x: hidden;
   font-size: 16px;
+}
+
+.main-content {
+  position: relative;
+  top: 30vh;
+  text-align: center;
+  .article {
+    border-radius: 20px;
+    padding: 10px 20px;
+    .article-text {
+      .cool {
+        width: 40px;
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
+    &:nth-child(1) {
+      background: gold;
+    }
+    &:nth-child(2) {
+      background: orangered;
+    }
+    &:nth-child(3) {
+      background: @green;
+    }
+    &:nth-child(4) {
+      background: @purple;
+    }
+    &:nth-child(5) {
+      background: deepskyblue;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    input {
+      text-align: center;
+      border: none;
+      border-bottom: 2px solid @green;
+      margin: 0 auto;
+      outline: none;
+      &:nth-child(2) {
+        width: 50px;
+      }
+    }
+    .preview {
+      text-align: center;
+
+    }
+  }
 }
