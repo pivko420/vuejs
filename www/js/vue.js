@@ -24,8 +24,6 @@ var app = new Vue({
             });
             this.newName = '';
             this.newAge = '';
-
-            this.newName.focus();
         },
         remove: function (guy) {
             this.guys = this.guys.filter( item => item !== guy );
