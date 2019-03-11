@@ -12,6 +12,10 @@ var app = new Vue({
                 name: 'daveloper',
                 age: '18',
                 cool: '10'
+            }, {
+                name: 'majir',
+                age: '18',
+                cool: '70'
             }
         ]
     },
@@ -24,6 +28,7 @@ var app = new Vue({
             });
             this.newName = '';
             this.newAge = '';
+            $('.name').focus();
         },
         remove: function (guy) {
             this.guys = this.guys.filter( item => item !== guy );

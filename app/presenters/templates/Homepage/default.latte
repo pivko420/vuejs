@@ -2,7 +2,7 @@
 <div class="main-content container d-flex justify-content-center">
 	<div id="app">
 
-		<div class="article row justify-content-center mb-2" v-for="guy in guys">
+		<div class="article row justify-content-center mb-2" v-bind:class="{ cooler: guy.cool > 40 }" v-for="guy in guys">
 			<div class="text-wrapper text-left">
 				<p class="article-text mb-0"><b>Name:</b> {{ guy.name }}</p>
 				<p class="article-text mb-0"><b>Age:</b> {{ guy.age }}</p>
@@ -11,13 +11,13 @@
 					<input class="cool" type="number" v-model.number="guy.cool">
 				</p>
 			</div>
-			<a class="ml-auto d-flex align-items-center" @click.prevent="remove(guy)">
+			<a class="remove ml-auto d-flex align-items-center" @click.prevent="remove(guy)">
 				<i class="far fa-trash-alt"></i>
 			</a>
 		</div>
 
 		<form @keydown.enter="add">
-			<input placeholder="Name" v-model="newName"></input>
+			<input class="name" placeholder="Name" v-model="newName"></input>
 			<input placeholder="Age" v-model="newAge" type="number"></input>
 		</form>
 		<p class="preview">{{ newName }} {{ newAge }}</p>

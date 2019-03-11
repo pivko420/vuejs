@@ -16,7 +16,7 @@ services:
 	cssMin: Joseki\Webloader\CssMinFilter
 	jsMin: Joseki\Webloader\JsMinFilter
 	wlCssFilter: WebLoader\Filter\CssUrlsFilter(%wwwDir%)
-	lessFilter: WebLoader\Filter\LessFilter
+#	lessFilter: WebLoader\Filter\LessFilter
 	jwlCssMinFilter: Joseki\Webloader\CssMinFilter
 
 extensions:
